@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Vendas | Araujo Embalagens</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <aside class="side">
+    <div class="logo">
+      <svg viewBox="0 0 48 48" width="44" height="44">
+        <path d="M24 4 6 13v22l18 9 18-9V13z" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" />
+        <path d="M6 13l18 9 18-9M24 22v22" fill="none" stroke="#fff" stroke-width="3" />
+      </svg>
+      <div>Grupo <b>Araujo</b><span></span>Embalagens</div>
+    </div>
+    <nav><a class="on">🏠 Visão Geral</a><a>👤 Clientes</a><a>📦 Produtos</a><a>🧑‍💼 Vendedores</a><a>👥 Equipes</a><a>📄 Relatórios</a></nav>
+    <div class="side-f">
+      <div>👤 <b>Diretoria</b><small>Visão total</small></div>
+      <div>📊 Power BI</div><small>Última atualização<br>28/09/2026 08:30</small>
+    </div>
+  </aside>
+  <main>
+    <header>
+      <div>
+        <h1>Painel de Vendas<small>Grupo Araujo Embalagens</small></h1><span class="demo">Dados de demonstração</span>
+      </div>
+      <div class="fl">
+        <label>Período<select id="periodo"></select></label><label>Equipe<select id="equipe"></select></label>
+        <label>Vendedor<select id="vendedor"></select></label><label>Cliente<select id="cliente"></select></label>
+      </div>
+    </header>
+    <section class="kpis" id="kpis"></section>
+    <section class="row r2">
+      <div class="card">
+        <h2>Evolução de Vendas</h2>
+        <p class="s">Faturamento mensal e comparação com o ano anterior</p>
+        <div class="leg"><span>Ano Atual</span><span class="b">Ano Anterior</span></div>
+        <div id="linha"></div>
+      </div>
+      <div class="card">
+        <h2>Meta vs. Realizado</h2>
+        <p class="s">Faturamento por mês (linha tracejada = meta)</p>
+        <div id="pct"></div>
+        <div id="barras"></div>
+      </div>
+    </section>
+    <section class="row r3">
+      <div class="card">
+        <h2>Top 10 Clientes</h2>
+        <p class="s">Faturamento e participação no total</p>
+        <table id="topc"></table>
+      </div>
+      <div class="card">
+        <h2>Top 10 Produtos</h2>
+        <p class="s">Faturamento e participação no total</p>
+        <table id="topp"></table>
+      </div>
+      <div class="card">
+        <h2>Ranking de Vendas</h2>
+        <p class="s">Por vendedor e por equipe</p>
+        <div class="tg"><button data-m="vendedores">Vendedores</button><button data-m="equipes">Equipes</button></div>
+        <table id="vend"></table>
+      </div>
+    </section>
+    <section class="row r4">
+      <div class="card">
+        <h2>Clientes Inativos</h2>
+        <p class="s">Clientes sem compra há mais de X dias</p>
+        <div class="ina">
+          <div class="big"><b id="ina-n">0</b>clientes inativos<br>(acima de <span id="dias-t">60</span> dias)<br><br>Dias sem compra<br>
+            <select id="dias">
+              <option>30</option>
+              <option selected>60</option>
+              <option>90</option>
+              <option>120</option>
+            </select>
+          </div>
+          <table id="ina-t"></table>
+          <div class="fxs" id="faixas"></div>
+        </div>
+      </div>
+      <div class="card ins">
+        <h2>💡 Insights</h2><br>
+        <ul id="ins"></ul>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+
+</html>
